@@ -1,0 +1,88 @@
+<!--
+Submit Form to Servlet Project from Code_with_Durgesh channel
+-->
+<!--
+In HTML type and placeholder attributes are for front end part
+        action, method, name and value attributes are for back end part
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+              integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="container">
+            <!--
+            The form can be submitted in two types of methods.1)post 2)get 
+            "post" method is more secure than "get" method. in post method we can send any data like audio, video 
+            but in get method we can submit limited amount of data. If we send any data using get method then that'll 
+            be visible in url box. So if we want to send sensitive data like password we've to use post method.
+            As here we're using post method so in HttpServlet we've to override the method dopost() method
+            -->
+            <h2>Registration Form</h2>
+            <form action="RegisterServlet" method="post">
+                <div>
+                    <i class="fa-duotone fa-user"></i>
+                    <input type="text" placeholder="First Name" name="first_name">
+                    <span>
+                        <i class="fa-duotone fa-user"></i>
+                        <input type="text" placeholder="Last Name" name="last_name">
+                    </span>
+                </div>
+                
+                <div>
+                    <i class="fa-duotone fa-envelope"></i>
+                    <input type="email" placeholder="Email" name="email">
+                </div>
+                
+                <div>
+                    <i class="fa-duotone fa-lock"></i>
+                    <input type="password" placeholder="Create Password" name="password">
+                </div>
+                
+                <div>
+                    <i class="fa-duotone fa-key"></i>
+                    <input type="password" placeholder="Confirm Password" name="password">
+                </div>
+                
+                <div>
+                    <label>Gender</label>
+                    <input type="radio" name="gender" value="Male">
+                    <label>Male</label>
+                    <input type="radio" name="gender" value="Female">
+                    <label>Female</label>
+                    <input type="radio" name="gender" value="Other">
+                    <label>Other</label>
+                </div>
+                
+                <div>
+                    <select name="country">
+                        <option>Select Country</option>
+                        <option>India</option>
+                        <option>England</option>
+                    </select>
+                    <div class="arrow">
+                        
+                    </div>
+                </div>
+                
+                <div>
+                    <input type="checkbox" name="condition" value="checked">
+                    <label>I accept the terms and conditions</label>
+                </div>
+                
+                <div>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+                
+            </form>
+        </div>
+    </body>
+</html>
